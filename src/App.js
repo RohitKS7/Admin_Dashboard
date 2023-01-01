@@ -32,7 +32,7 @@ const App = () => {
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
-            <TooltipComponent content="Settings" position="Top">
+            <TooltipComponent content="Settings" position="TopCenter">
               <button
                 type="button"
                 style={{ borderRadius: "50%", backgroundColor: "black" }}
@@ -47,7 +47,9 @@ const App = () => {
               <Sidebar />
             </div>
           ) : (
-            <div className="w-0 dark:bg-secondary-dark-bg">MobileBar</div>
+            <div className="w-0 dark:bg-secondary-dark-bg">
+              <Sidebar />
+            </div>
           )}
 
           <div
