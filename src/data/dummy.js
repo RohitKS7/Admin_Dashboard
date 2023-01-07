@@ -3057,20 +3057,20 @@ export const stackedChartData = [
 
 export const stackedCustomSeries = [
   {
-    dataSource: stackedChartData[1],
-    xName: "x",
-    yName: "y",
-    name: "Expense",
-    type: "StackingColumn",
-    background: "red",
-  },
-  {
     dataSource: stackedChartData[0],
     xName: "x",
     yName: "y",
     name: "Budget",
     type: "StackingColumn",
     background: "green",
+  },
+  {
+    dataSource: stackedChartData[1],
+    xName: "x",
+    yName: "y",
+    name: "Expense",
+    type: "StackingColumn",
+    background: "red",
   },
 ];
 
