@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
@@ -26,39 +26,20 @@ import {
 import { useStateContext } from "./contexts/ContextProvider";
 
 const App = () => {
-  const { activeMenu, screenSize, setActiveMenu, setScreenSize } =
+  const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode } =
     useStateContext();
 
-  useEffect(() => {
-    const handleResize = () => setScreenSize(window.innerWidth);
-
-    // whenever window resizes!, use that screen size in handleResize function
-    window.addEventListener("resize", handleResize);
-
-    handleResize();
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // SECTION doing something with that screensize
-  useEffect(() => {
-    if (screenSize <= 900) {
-      setActiveMenu(false);
-    } else {
-      setActiveMenu(true);
-    }
-  }, [screenSize]);
-
   return (
-    <div>
+    <div className={currentMode === 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
             <TooltipComponent content="Settings" position="TopCenter">
               <button
                 type="button"
-                style={{ borderRadius: "50%", backgroundColor: "black" }}
+                style={{ borderRadius: "50%", backgroundColor:  currentColor}}
                 className="text-3xl p-3 text-white hover:drop-shadow-xl hover:bg-light-gray"
+                onClick={() => setThemeSettings(true)}
               >
                 <FiSettings />
               </button>
@@ -84,6 +65,8 @@ const App = () => {
             </div>
 
             <div>
+             { themeSettings &&  <ThemeSettings />}
+
               <Routes>
                 {/* dashboard  */}
                 <Route path="/" element={<Ecommerce />} />
