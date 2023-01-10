@@ -40,7 +40,7 @@ module.exports = {
       },
       backgroundImage: {
         "hero-pattern":
-          "url('https://raw.githubusercontent.com/RohitKS7/Admin_Dashboard/master/src/data/cyber-monday-retail-sales.jpg')",
+          "url('https://raw.githubusercontent.com/RohitKS7/Admin_Dashboard/master/src/data/cyber-monday-retail-sales.png')",
       },
     },
   },
