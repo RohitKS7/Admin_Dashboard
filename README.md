@@ -4,7 +4,7 @@
 ## Overview
 Shopit Admin Dashboard is a data-driven interface for managing e-commerce operations. Built with **React** and **Syncfusion**, it provides a clean, organized way to visualize data through charts, tables, and more. This project showcases my ability to create dynamic dashboards, relevant to Amana’s need for a DeFi yield aggregator dashboard.
 
-**[Live Demo](#)** - *Note: Add your live demo link here if available!*
+**[Live Demo](https://shopit-admin-dashboard.vercel.app/)**
 
 ## Features
 - **Data Visualization**: Interactive charts and tables for sales, users, and inventory.
